@@ -1,19 +1,14 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
-//#include <boost/algorithm/string.hpp>
-
 using namespace std;
  
 vector <double> leer(string filename);
-void ejemplo_escribe(string filename);
 double suma(vector<double> valores);
 
 int main () {
   string filename;
   string filename1;  
-  string lect1;  
-  size_t found;
   double suma_x; 
   double suma_y;  
   vector<double> valores_x;
@@ -31,13 +26,11 @@ int main () {
 
 vector <double> leer(string filename){
   ifstream infile; 
-  string line;
-  string lect; 
+  string line; 
   vector<double> val_x;  
   infile.open(filename); 
   getline(infile, line);
   while(infile){ 
-   lect=lect+line+" ";
    val_x.push_back(atof(line.c_str()));   
    getline(infile, line);
   } 
